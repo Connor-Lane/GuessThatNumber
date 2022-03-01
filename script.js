@@ -47,6 +47,14 @@ while (restartGame) {
 
     // Continues looping until the user guesses the correct number or runs out of attempts (NOTE: Loops until a BREAK keyword is run)
     while (true) {
+
+        // Displays the number when a code word is entered
+        if (guess === `penguinsarecool`) {
+            alert (`The number is ${randomNum}`);
+            // Prompts the user to enter another guess
+            guess = prompt(`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempts left.`);
+        }
+
         // Tries to convert the user's guess into a number
         guess = parseInt(guess);
 
@@ -88,7 +96,7 @@ while (restartGame) {
         // Checks if the user's answer is no (`N`) 
         if (playAgain.toUpperCase() === `N`) {
             // Alerts the user that the game is over and the game does NOT restart
-            alert(`Thanks for  playing. You are pretty cool.`)
+            alert(`Thanks for playing. You are pretty cool.`)
             restartGame = false;
             break;
 
